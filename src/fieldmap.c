@@ -50,6 +50,8 @@ static bool8 IsCoordInIncomingConnectingMap(int coord, int srcMax, int destMax, 
 
 static inline u16 GetBorderBlockAt(int x, int y)
 {
+    // TODO: Add back calculation for custom border dimensions as described here:
+    //  https://github.com/pret/pokeemerald/wiki/Custom-Border-Dimensions#2-use-dimensions-fields-to-read-border-data
     int i = (x + 1) & 1;
     i += ((y + 1) & 1) * 2;
     return gMapHeader.mapLayout->border[i] | MAPGRID_COLLISION_MASK;
